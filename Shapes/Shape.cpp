@@ -24,6 +24,10 @@ uint8_t Shape::GetBlue() const {
     return color & 0xFF;
 }
 
+Point2D Shape::GetPoint() const {
+    return point;
+}
+
 void Shape::SetAlpha(uint8_t value) {
     if (value < 0 || value > 255) {
         std::cout << "Value must ne between 0 and 255!" << std::endl;
@@ -54,4 +58,8 @@ void Shape::SetBlue(uint8_t value) {
         return;
     }
     color = (color & 0xFFFFFF00) | value;
+}
+
+void Shape::SetPoint(Point2D point) {
+    this->point = point;
 }

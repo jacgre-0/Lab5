@@ -10,10 +10,13 @@ public:
     uint8_t GetRed() const;
     uint8_t GetGreen() const;
     uint8_t GetBlue() const;
+    Point2D GetPoint() const;
     void SetAlpha(uint8_t value);
     void SetRed(uint8_t value);
     void SetGreen(uint8_t value);
     void SetBlue(uint8_t value);
+    void SetPoint(Point2D point);
+protected:
     virtual void Render() {};
 private:
     Point2D point;
