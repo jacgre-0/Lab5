@@ -8,7 +8,31 @@ Rectangle::Rectangle(Point2D point, uint8_t r, uint8_t g, uint8_t b, uint8_t a, 
     height(height)
 {}
 
-void Rectangle::Render() {
+int Rectangle::GetWidth() const {
+    return width;
+}
+
+int Rectangle::GetHeight() const {
+    return height;
+}
+
+void Rectangle::SetWidth(int value) {
+    if (value < 0) {
+        std::cout << "Width cannot be negative!" << std::endl;
+        return;
+    }
+    width = value;
+}
+
+void Rectangle::SetHeight(int value) {
+    if (value < 0) {
+        std::cout << "Height cannot be negative!" << std::endl;
+        return;
+    }
+    height = value;
+}
+
+void Rectangle::render() {
     std::cout << "Rectangle" << std::endl;
     std::cout << "Position:" << std::endl;
     std::cout << GetPoint().to_string() << std::endl;

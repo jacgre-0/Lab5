@@ -7,7 +7,19 @@ Circle::Circle(Point2D point, int radius)
     radius(radius)
 {}
 
-void Circle::Render() {
+int Circle::GetRadius() const {
+    return radius;
+}
+
+void Circle::SetRadius(int value) {
+    if (value < 0) {
+        std::cout << "Radius cannot be negative!" << std::endl;
+        return;
+    }
+    radius = value;
+}
+
+void Circle::render() {
     std::cout << "Circle" << std::endl;
     std::cout << "Position:" << std::endl;
     std::cout << GetPoint().to_string() << std::endl;

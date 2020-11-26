@@ -24,7 +24,7 @@ int main() {
 
 void testRendering(std::vector<Shape*> shapes) {
     for (const auto shape : shapes) {
-        shape->Render();
+        shape->render();
         std::cout << std::endl;
     }
 }
