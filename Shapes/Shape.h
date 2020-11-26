@@ -1,9 +1,10 @@
 #pragma once
+#include "Point2D.h"
 #include <cstdint>
 
 class Shape {
 public:
-    Shape(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
+    Shape(Point2D point, uint8_t r, uint8_t g, uint8_t b, uint8_t a);
 public:
     uint8_t GetAlpha() const;
     uint8_t GetRed() const;
@@ -15,5 +16,6 @@ public:
     void SetBlue(uint8_t value);
     virtual void Render() {};
 private:
+    Point2D point;
     int color;
 };

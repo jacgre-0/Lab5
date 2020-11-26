@@ -1,7 +1,10 @@
 #include "Shape.h"
 #include <iostream>
 
-Shape::Shape(uint8_t r, uint8_t g, uint8_t b, uint8_t a) {
+Shape::Shape(Point2D point,uint8_t r, uint8_t g, uint8_t b, uint8_t a) 
+    :
+    point(point)
+{
     color = a << 24 | r << 16 | g << 8 | b;
 }
 
