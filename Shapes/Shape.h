@@ -16,8 +16,8 @@ public:
     void SetGreen(uint8_t value);
     void SetBlue(uint8_t value);
     void SetPoint(Point2D point);
-protected:
-    virtual void Render() {};
+public:
+    virtual void Render() = 0;
 private:
     Point2D point;
     int color;
