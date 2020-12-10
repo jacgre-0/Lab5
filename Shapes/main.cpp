@@ -60,7 +60,7 @@ void Update(SDL_Renderer* renderer) {
     SDL_RenderClear(renderer);
 }
 
-//Process some input from the user. If the user input the button "q" the fucntion return 1, otherwise
+//Process some input from the user. If the user press the key "q", the function returns 1, otherwise
 //the function returns an empty std::optional (std::nullopt)
 std::optional<int> ProcessInput(const SDL_Event& event, SDL_Renderer* renderer, std::vector<Shape*>& shapes) {
     switch (event.type) {
