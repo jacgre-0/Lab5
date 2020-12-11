@@ -1,0 +1,14 @@
+What did you learn?
+I learned how to use the SDL2 library.
+I also learned to use a UML design software (I used Visual Paradigm for this perticular lab) to design a class Diagram.
+
+What was difficult in the lab? 
+Actually thinking of what classes and methods that was needed for the City building game was quite difficult. 
+Designing a City building game can be a massive project consisting of hundreds of classes, so to actually compact and abstract away
+the idea into only 10-15 classes was challenging. Also this was the first time I ever used UML which didn't make it any easier.  
+
+How can the lab be improved?
+I think it was a good Lab. Graphicsprogramming is fun 
+
+I am using Visual Studio 2019 and C++17
+I spent around 8-10 hours on this Lab
