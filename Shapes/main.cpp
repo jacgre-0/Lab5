@@ -77,7 +77,6 @@ std::optional<int> ProcessInput(const SDL_Event& event, SDL_Renderer* renderer, 
                 break;
             case SDLK_q:
                 return 1;
-                break;
             case SDLK_x:
                 for (auto& shape : shapes) {
                     delete shape;
