@@ -11,12 +11,14 @@
 
 
 enum class ShapeEnum {Rectangle, Triangle, Circle};
-//void testRendering(std::vector<Shape*> shapes, SDL_Renderer* renderer);
+
+//void testRendering(const std::vector<Shape*>& shapes);
 void Update(SDL_Renderer* renderer);
 std::optional<int> ProcessInput(const SDL_Event& event, SDL_Renderer* renderer, std::vector<Shape*>& shapes);
 void Render(const std::vector<Shape*>& shapes, SDL_Renderer* renderer);
 void CreateRandomShape(ShapeEnum shapeToCreate, std::vector<Shape*>& shapes);
  
+//task 2 main function
 int main(int argc, char** argv) {
     std::vector<Shape*> shapes;
 
@@ -119,20 +121,8 @@ void CreateRandomShape(ShapeEnum shapeToCreate, std::vector<Shape*>& shapes) {
     }
 }
 
-
-//int main(int argc, char* argv[]) {
-//    //set up sdl
-//    SDL_Init(SDL_INIT_EVERYTHING);
-//
-//    //create the window and renderer
-//    SDL_Window* window;
-//    SDL_Renderer* renderer;
-//    SDL_CreateWindowAndRenderer(800, 500, SDL_WINDOW_SHOWN, &window, &renderer);
-//   
-//    //Set the clear color
-//    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-//    SDL_RenderClear(renderer);
-//   
+//Task 1 main function
+//int main() {
 //    std::vector<Shape*> shapes;
 //
 //    Rectangle rect({ 50, 100 }, 255, 0, 0, 255, 25, 12);
@@ -143,22 +133,15 @@ void CreateRandomShape(ShapeEnum shapeToCreate, std::vector<Shape*>& shapes) {
 //    shapes.push_back(&tri);
 //    shapes.push_back(&circle);
 //
-//    testRendering(shapes,renderer);
-//
-//    SDL_RenderPresent(renderer);
-//    SDL_Delay(5000);
-//
-//    //quit and clean up
-//    SDL_DestroyWindow(window);
-//    SDL_Quit();
+//    testRendering(shapes);
 //
 //    std::cin.get();
 //    return 0;
 //}
-
-//void testRendering(std::vector<Shape*> shapes, SDL_Renderer* renderer) {
+//
+//void testRendering(const std::vector<Shape*>& shapes) {
 //    for (const auto shape : shapes) {
-//        shape->render(renderer);
+//        shape->render();
 //        std::cout << std::endl;
 //    }
 //}
