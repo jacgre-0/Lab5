@@ -25,8 +25,7 @@ int main(int argc, char** argv) {
     SDL_Init(SDL_INIT_EVERYTHING);
 
     SDL_Window* window     = SDL_CreateWindow("Test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 500, SDL_WINDOW_SHOWN);
-    //Use hardware accelaration
-    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
 
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderClear(renderer);
@@ -104,19 +103,19 @@ void CreateRandomShape(ShapeEnum shapeToCreate, std::vector<Shape*>& shapes) {
     std::default_random_engine rng(device());
 
     std::uniform_real_distribution<float> distXCoords(0,650);
-    std::uniform_real_distribution<float> distYCoords(0, 200);
+    std::uniform_real_distribution<float> distYCoords(0, 450);
     std::uniform_int_distribution<int> distSize(5, 250);
 
     if (shapeToCreate == ShapeEnum::Circle) {
-        auto circ = new Circle({ distXCoords(rng),distXCoords(rng) }, distSize(rng));
+        auto circ = new Circle({ distXCoords(rng),distYCoords(rng) }, distSize(rng));
         shapes.push_back(circ);
     }
     else if (shapeToCreate == ShapeEnum::Rectangle) {
-        auto rect = new Rectangle({ distXCoords(rng),distXCoords(rng) }, 255, 0, 0, 255, distSize(rng), distSize(rng));
+        auto rect = new Rectangle({ distXCoords(rng),distYCoords(rng) }, 255, 0, 0, 255, distSize(rng), distSize(rng));
         shapes.push_back(rect);
     }
     else if (shapeToCreate == ShapeEnum::Triangle) {
-        auto tri = new Triangle({ distXCoords(rng),distXCoords(rng) }, 255, 0, 255, 255, distSize(rng), distSize(rng));
+        auto tri = new Triangle({ distXCoords(rng),distYCoords(rng) }, 255, 0, 255, 255, distSize(rng), distSize(rng));
         shapes.push_back(tri);
     }
 }
